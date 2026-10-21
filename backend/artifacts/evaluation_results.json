@@ -1,0 +1,467 @@
+{
+  "num_queries": 17,
+  "cutoff_k": 10,
+  "models_evaluated": [
+    "tfidf",
+    "bm25",
+    "dense",
+    "hybrid"
+  ],
+  "metrics_comparison": [
+    {
+      "model_name": "TF-IDF",
+      "precision_at_10": 0.6647,
+      "recall": 0.2274,
+      "map": 0.5313,
+      "ndcg_at_10": 0.466,
+      "avg_latency_ms": 32.68,
+      "candidate_coverage_pct": 100.0,
+      "is_available": true,
+      "status_note": "Evaluated across all 17 benchmark queries."
+    },
+    {
+      "model_name": "BM25",
+      "precision_at_10": 0.7059,
+      "recall": 0.236,
+      "map": 0.5734,
+      "ndcg_at_10": 0.584,
+      "avg_latency_ms": 225.51,
+      "candidate_coverage_pct": 100.0,
+      "is_available": true,
+      "status_note": "Evaluated across all 17 benchmark queries."
+    },
+    {
+      "model_name": "Sentence Transformer",
+      "precision_at_10": 0.7059,
+      "recall": 0.1179,
+      "map": 0.4393,
+      "ndcg_at_10": 0.6097,
+      "avg_latency_ms": 10.39,
+      "candidate_coverage_pct": 18.2,
+      "is_available": true,
+      "status_note": "Evaluated across all 17 benchmark queries."
+    },
+    {
+      "model_name": "Hybrid RRF",
+      "precision_at_10": 0.7941,
+      "recall": 0.2461,
+      "map": 0.619,
+      "ndcg_at_10": 0.7124,
+      "avg_latency_ms": 222.61,
+      "candidate_coverage_pct": 100.0,
+      "is_available": true,
+      "status_note": "Evaluated across all 17 benchmark queries."
+    }
+  ],
+  "precision_recall_curves": {
+    "TF-IDF": [
+      {
+        "recall": 0.0,
+        "precision": 0.835
+      },
+      {
+        "recall": 0.1,
+        "precision": 0.4938
+      },
+      {
+        "recall": 0.2,
+        "precision": 0.493
+      },
+      {
+        "recall": 0.3,
+        "precision": 0.482
+      },
+      {
+        "recall": 0.4,
+        "precision": 0.4165
+      },
+      {
+        "recall": 0.5,
+        "precision": 0.3809
+      },
+      {
+        "recall": 0.6,
+        "precision": 0.3796
+      },
+      {
+        "recall": 0.7,
+        "precision": 0.3789
+      },
+      {
+        "recall": 0.8,
+        "precision": 0.3671
+      },
+      {
+        "recall": 0.9,
+        "precision": 0.3625
+      },
+      {
+        "recall": 1.0,
+        "precision": 0.2836
+      }
+    ],
+    "BM25": [
+      {
+        "recall": 0.0,
+        "precision": 0.9489
+      },
+      {
+        "recall": 0.1,
+        "precision": 0.5345
+      },
+      {
+        "recall": 0.2,
+        "precision": 0.5265
+      },
+      {
+        "recall": 0.3,
+        "precision": 0.5142
+      },
+      {
+        "recall": 0.4,
+        "precision": 0.462
+      },
+      {
+        "recall": 0.5,
+        "precision": 0.4128
+      },
+      {
+        "recall": 0.6,
+        "precision": 0.4115
+      },
+      {
+        "recall": 0.7,
+        "precision": 0.4039
+      },
+      {
+        "recall": 0.8,
+        "precision": 0.3634
+      },
+      {
+        "recall": 0.9,
+        "precision": 0.3063
+      },
+      {
+        "recall": 1.0,
+        "precision": 0.2551
+      }
+    ],
+    "Sentence Transformer": [
+      {
+        "recall": 0.0,
+        "precision": 0.9761
+      },
+      {
+        "recall": 0.1,
+        "precision": 0.6144
+      },
+      {
+        "recall": 0.2,
+        "precision": 0.3431
+      },
+      {
+        "recall": 0.3,
+        "precision": 0.0588
+      },
+      {
+        "recall": 0.4,
+        "precision": 0.0588
+      },
+      {
+        "recall": 0.5,
+        "precision": 0.0
+      },
+      {
+        "recall": 0.6,
+        "precision": 0.0
+      },
+      {
+        "recall": 0.7,
+        "precision": 0.0
+      },
+      {
+        "recall": 0.8,
+        "precision": 0.0
+      },
+      {
+        "recall": 0.9,
+        "precision": 0.0
+      },
+      {
+        "recall": 1.0,
+        "precision": 0.0
+      }
+    ],
+    "Hybrid RRF": [
+      {
+        "recall": 0.0,
+        "precision": 0.9882
+      },
+      {
+        "recall": 0.1,
+        "precision": 0.5625
+      },
+      {
+        "recall": 0.2,
+        "precision": 0.5275
+      },
+      {
+        "recall": 0.3,
+        "precision": 0.5092
+      },
+      {
+        "recall": 0.4,
+        "precision": 0.4409
+      },
+      {
+        "recall": 0.5,
+        "precision": 0.3744
+      },
+      {
+        "recall": 0.6,
+        "precision": 0.3744
+      },
+      {
+        "recall": 0.7,
+        "precision": 0.3687
+      },
+      {
+        "recall": 0.8,
+        "precision": 0.3571
+      },
+      {
+        "recall": 0.9,
+        "precision": 0.3026
+      },
+      {
+        "recall": 1.0,
+        "precision": 0.2756
+      }
+    ]
+  },
+  "benchmark_queries": [
+    {
+      "query_id": "Q01",
+      "query_text": "The Da Vinci Code",
+      "category": "Exact Title",
+      "num_relevant_docs": 10,
+      "sample_relevant_isbns": [
+        "8495618605",
+        "0739313126",
+        "0739302043",
+        "1593150229",
+        "0385504217"
+      ]
+    },
+    {
+      "query_id": "Q02",
+      "query_text": "To Kill a Mockingbird",
+      "category": "Exact Title",
+      "num_relevant_docs": 15,
+      "sample_relevant_isbns": [
+        "3883890391",
+        "0435120964",
+        "0397001517",
+        "157270036X",
+        "0060935464"
+      ]
+    },
+    {
+      "query_id": "Q03",
+      "query_text": "The Catcher in the Rye",
+      "category": "Exact Title",
+      "num_relevant_docs": 8,
+      "sample_relevant_isbns": [
+        "0531001725",
+        "0316769177",
+        "0553149660",
+        "0316769533",
+        "0316769487"
+      ]
+    },
+    {
+      "query_id": "Q04",
+      "query_text": "Pride and Prejudice",
+      "category": "Exact Title",
+      "num_relevant_docs": 51,
+      "sample_relevant_isbns": [
+        "0451523652",
+        "0141439513",
+        "3190025355",
+        "0553213105",
+        "0804900019"
+      ]
+    },
+    {
+      "query_id": "Q05",
+      "query_text": "1984",
+      "category": "Exact Title",
+      "num_relevant_docs": 35,
+      "sample_relevant_isbns": [
+        "0586061940",
+        "0881030368",
+        "3548234100",
+        "207036822X",
+        "0345313585"
+      ]
+    },
+    {
+      "query_id": "Q06",
+      "query_text": "The Hobbit",
+      "category": "Exact Title",
+      "num_relevant_docs": 33,
+      "sample_relevant_isbns": [
+        "0345340426",
+        "0395873460",
+        "0618002219",
+        "0261103288",
+        "061815082X"
+      ]
+    },
+    {
+      "query_id": "Q07",
+      "query_text": "Fahrenheit 451",
+      "category": "Exact Title",
+      "num_relevant_docs": 22,
+      "sample_relevant_isbns": [
+        "0345342003",
+        "0395878063",
+        "0345342968",
+        "8484501965",
+        "0345292340"
+      ]
+    },
+    {
+      "query_id": "Q08",
+      "query_text": "Stephen King",
+      "category": "Author Search",
+      "num_relevant_docs": 446,
+      "sample_relevant_isbns": [
+        "0451150635",
+        "0452278902",
+        "0451156609",
+        "0452273307",
+        "0833510266"
+      ]
+    },
+    {
+      "query_id": "Q09",
+      "query_text": "Agatha Christie",
+      "category": "Author Search",
+      "num_relevant_docs": 403,
+      "sample_relevant_isbns": [
+        "0425091805",
+        "9997508769",
+        "042506784X",
+        "0671614347",
+        "0425100413"
+      ]
+    },
+    {
+      "query_id": "Q10",
+      "query_text": "John Grisham",
+      "category": "Author Search",
+      "num_relevant_docs": 129,
+      "sample_relevant_isbns": [
+        "0712654593",
+        "0385470150",
+        "0582364108",
+        "8440681798",
+        "0385475136"
+      ]
+    },
+    {
+      "query_id": "Q11",
+      "query_text": "J. K. Rowling",
+      "category": "Author Search",
+      "num_relevant_docs": 70,
+      "sample_relevant_isbns": [
+        "0439434866",
+        "1582348251",
+        "043935806X",
+        "2070528189",
+        "0613496744"
+      ]
+    },
+    {
+      "query_id": "Q12",
+      "query_text": "Dan Brown",
+      "category": "Author Search",
+      "num_relevant_docs": 20,
+      "sample_relevant_isbns": [
+        "8495618605",
+        "3404148665",
+        "0671027360",
+        "0739302043",
+        "0312995423"
+      ]
+    },
+    {
+      "query_id": "Q13",
+      "query_text": "murder mystery detective thriller",
+      "category": "Thematic / Natural Language",
+      "num_relevant_docs": 3646,
+      "sample_relevant_isbns": [
+        "0684834553",
+        "0553237217",
+        "0807554308",
+        "0152024859",
+        "0061056014"
+      ]
+    },
+    {
+      "query_id": "Q14",
+      "query_text": "vampire horror supernatural dark",
+      "category": "Thematic / Natural Language",
+      "num_relevant_docs": 1597,
+      "sample_relevant_isbns": [
+        "0821763415",
+        "0441892604",
+        "0671022091",
+        "0061097470",
+        "0765304112"
+      ]
+    },
+    {
+      "query_id": "Q15",
+      "query_text": "magic wizard fantasy adventure",
+      "category": "Thematic / Natural Language",
+      "num_relevant_docs": 1963,
+      "sample_relevant_isbns": [
+        "0425187713",
+        "0743442423",
+        "0140196161",
+        "0515132896",
+        "0486229947"
+      ]
+    },
+    {
+      "query_id": "Q16",
+      "query_text": "courtroom legal justice lawyer drama",
+      "category": "Thematic / Natural Language",
+      "num_relevant_docs": 449,
+      "sample_relevant_isbns": [
+        "3499263440",
+        "0787105805",
+        "0373079133",
+        "0373226810",
+        "1555532411"
+      ]
+    },
+    {
+      "query_id": "Q17",
+      "query_text": "space science fiction alien galaxy",
+      "category": "Thematic / Natural Language",
+      "num_relevant_docs": 2658,
+      "sample_relevant_isbns": [
+        "1740592301",
+        "0671798316",
+        "1885211430",
+        "1577486390",
+        "0895941821"
+      ]
+    }
+  ],
+  "protocol_description": "Evaluation was performed on 17 fixed benchmark queries spanning Exact Titles, Author searches, and Thematic/Natural Language keywords. Ground truth relevance was derived from catalog metadata and explicit user ratings (ratings >= 7.0). Implicit interactions (rating=0) were excluded from positive relevance. Models were pre-warmed so latency strictly measures query preprocessing, encoding, and ranking.",
+  "limitations_notes": "Book-Crossing lacks human search-intent labels; relevance is established through title/author metadata and explicit positive ratings (>= 7.0). The dense semantic model covers the top 10,000 catalog books, while TF-IDF, BM25, and Hybrid RRF cover the full 271,045 catalog records."
+}
