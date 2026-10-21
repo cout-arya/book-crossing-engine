@@ -11,6 +11,13 @@ import {
 import { Database, Users, Star, BookMarked, Filter, Layers } from 'lucide-react';
 import { getDatasetStats } from '../services/api';
 
+// Decode HTML entities (e.g. &amp; → &) that may come from the backend CSV parser
+function decodeHtml(str) {
+  const txt = document.createElement('textarea');
+  txt.innerHTML = str;
+  return txt.value;
+}
+
 export default function DatasetPage() {
   const [stats, setStats] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -181,7 +188,7 @@ export default function DatasetPage() {
             <tbody>
               {Object.entries(stats.top_publishers || {}).map(([publisher, count]) => (
                 <tr key={publisher}>
-                  <td style={{ fontWeight: 600 }}>{publisher}</td>
+                  <td style={{ fontWeight: 600 }}>{decodeHtml(publisher)}</td>
                   <td style={{ textAlign: 'right', fontFamily: 'var(--font-mono)' }}>
                     {count.toLocaleString()}
                   </td>

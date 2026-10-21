@@ -16,7 +16,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
           <Layers size={22} />
         </div>
         <div>
-          <h1 className="brand-title">Project 15: Book Search</h1>
+          <h1 className="brand-title">Book Search</h1>
           <p className="brand-subtitle">Information Retrieval — Book-Crossing Engine</p>
         </div>
       </div>

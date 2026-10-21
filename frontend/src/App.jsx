@@ -30,7 +30,7 @@ export default function App() {
         }}
       >
         <p>
-          Project 15: Book Search using Book-Crossing • Information Retrieval System •
+          Book Search using Book-Crossing • Information Retrieval System •
           Algorithms: TF-IDF, BM25, Sentence Transformer (all-MiniLM-L6-v2), Hybrid RRF (k=60)
         </p>
       </footer>
