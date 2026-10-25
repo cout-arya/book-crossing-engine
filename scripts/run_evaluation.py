@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from backend.app.services.dataset_service import DatasetService
 from backend.app.services.search_service import SearchService
 from backend.app.evaluation.evaluator import Evaluator
+from backend.app.config import EVALUATION_RESULTS_PATH
 
 
 def main():
@@ -67,7 +68,7 @@ def main():
         print(prec_str)
 
     print("\n" + "=" * 75)
-    print(f"[+] Evaluation results saved to {evaluator.benchmark_queries[0] if False else 'backend/artifacts/evaluation_results.json'}")
+    print(f"[+] Evaluation results saved to {EVALUATION_RESULTS_PATH}")
     print("=" * 75)
 
 

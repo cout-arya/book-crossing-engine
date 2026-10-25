@@ -122,6 +122,9 @@ class Evaluator:
 
             # Macro-averaged metrics
             n_queries = len(self.benchmark_queries)
+            if n_queries == 0:
+                logger.warning("No benchmark queries found — skipping metric aggregation.")
+                continue
             mean_p = round(float(sum(precisions_at_k) / n_queries), 4)
             mean_r = round(float(sum(recalls_at_k) / n_queries), 4)
             mean_map = round(float(sum(average_precisions) / n_queries), 4)

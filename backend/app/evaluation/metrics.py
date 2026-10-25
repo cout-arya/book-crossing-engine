@@ -54,8 +54,9 @@ def average_precision(retrieved: List[str], relevant: Set[str], cutoff: int = 50
             hits += 1
             sum_precisions += (hits / float(rank))
 
-    # Normalize by the total number of relevant documents (or cutoff min)
-    return sum_precisions / float(min(len(relevant), cutoff))
+    # Normalize by the total number of relevant documents (standard AP definition)
+    # The cutoff only limits inspection depth, not the normalization denominator
+    return sum_precisions / float(len(relevant))
 
 
 def dcg_at_k(retrieved: List[str], relevance_grades: Dict[str, float], k: int = 10) -> float:

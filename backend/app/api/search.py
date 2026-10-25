@@ -17,7 +17,7 @@ def execute_search(request: SearchRequest):
     if request.model.lower() not in valid_models:
         raise HTTPException(
             status_code=400,
-            detail=f"Invalid model '{request.model}'. Supported models: tfidf, bm25, semantic, hybrid"
+            detail=f"Invalid model '{request.model}'. Supported models: tfidf, bm25, dense (alias: semantic), hybrid (alias: rrf)"
         )
 
     response = search_service.search(

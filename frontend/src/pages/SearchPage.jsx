@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Search, Sparkles, Filter, AlertCircle, Clock, CheckCircle } from 'lucide-react';
 import { searchBooks } from '../services/api';
 import BookCard from '../components/BookCard';
@@ -33,7 +33,7 @@ export default function SearchPage() {
   const [error, setError] = useState(null);
   const [hasSearched, setHasSearched] = useState(false);
 
-  const handleSearch = async (overrideQuery = null) => {
+  const handleSearch = useCallback(async (overrideQuery = null) => {
     const q = overrideQuery !== null ? overrideQuery : query;
     if (!q.trim()) return;
 
@@ -62,16 +62,17 @@ export default function SearchPage() {
       console.error('Search error:', err);
       setError(
         err.response?.data?.detail ||
-          'Failed to execute search. Make sure the backend API is running.'
+        'Failed to execute search. Make sure the backend API is running.'
       );
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [query, selectedModel, limit, authorFilter, yearFilter]);
 
   // Initial search on mount
   useEffect(() => {
     handleSearch('The Da Vinci Code');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSuggestedClick = (suggested) => {

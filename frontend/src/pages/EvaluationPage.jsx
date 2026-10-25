@@ -75,11 +75,13 @@ export default function EvaluationPage() {
     return point;
   });
 
-  // Identify top score in each column
-  const maxP = Math.max(...metrics_comparison.map((m) => m.precision_at_10));
-  const maxR = Math.max(...metrics_comparison.map((m) => m.recall));
-  const maxMap = Math.max(...metrics_comparison.map((m) => m.map));
-  const maxNdcg = Math.max(...metrics_comparison.map((m) => m.ndcg_at_10));
+  // Identify top score in each column — only compare available models to avoid
+  // highlighting unavailable (0.0) rows as "best" when all values are tied at zero
+  const availableModels = metrics_comparison.filter((m) => m.is_available);
+  const maxP = availableModels.length > 0 ? Math.max(...availableModels.map((m) => m.precision_at_10)) : -1;
+  const maxR = availableModels.length > 0 ? Math.max(...availableModels.map((m) => m.recall)) : -1;
+  const maxMap = availableModels.length > 0 ? Math.max(...availableModels.map((m) => m.map)) : -1;
+  const maxNdcg = availableModels.length > 0 ? Math.max(...availableModels.map((m) => m.ndcg_at_10)) : -1;
 
   return (
     <div>
